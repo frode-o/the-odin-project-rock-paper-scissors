@@ -1,13 +1,27 @@
 // Create variables for computerChoice, userChoice og winner.
+let computerChoice; 
+let userChoice;
+let winner;
+
 // Get computer choice and store it in computerChoice.
-// 	Declare variabel for randomInteger.
-//	Get random number between 0 and 2,9999999
-//	Transform number to integer between 0 and 2.
-//	Store integer in variable randomInteger.
-//	If randomInteger is 0, return rock in computerChoice.
-//	If randomInteger is 1, return paper in computerChoice.
-//	If randomInteger is 2, return scissors in computerChoice.
-// 	Return computerChoice.
+function getComputerChoice() {
+	let randomInteger = (Math.floor(Math.random() * 3) + 1); // get random number between 0 and 2,9999, convert to integer between 1 and 3 and store in randomInteger.
+
+	// convert randomInteger to strings and store in computerChoice
+	if ( randomInteger === 1 ) {
+		computerChoice = "rock";
+	} else if ( randomInteger === 2 ) {
+		computerChoice = "paper";
+	} else {
+		computerChoice = "scissors";
+	}
+	return computerChoice;
+} // return the string from the function.
+
+// TEST function
+getComputerChoice();
+console.log(computerChoice);
+
 // Get user choice and store it in userChoice.
 // 	Declare variable userInput.
 // 	Prompt user for choice.
