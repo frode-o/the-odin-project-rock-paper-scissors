@@ -19,18 +19,81 @@ function getComputerChoice() {
 } // return the string from the function.
 
 // TEST function
-getComputerChoice();
-console.log(computerChoice);
+// getComputerChoice();
+// console.log(computerChoice);
 
 // Get user choice and store it in userChoice.
-// 	Declare variable userInput.
-// 	Prompt user for choice.
-// 	Store input in userInput.
-// 	Make lowercase and store in userChoice.
-// 	Validate that choice is either rock, paper or scissors.
-// 	If not, print error.
-// 	Else return userChoice.
-// Draw the winner.
-// Print userChoice.
-// Print computerChoice.
-// Announce the winner.
+function getUserChoice() {
+    userChoice = prompt("Please select 'rock', 'paper', or 'scissors'");  // 	Prompt user for choice. Store input in userInput.
+    userChoice = userChoice.toLowerCase();  // 	Make lowercase and store in userChoice.
+    return userChoice;
+}
+// getUserChoice();
+// console.log(userChoice);
+
+
+// playRound(computerChoice, userChoice);
+// console.log(winner); // Announce the winner.
+// console.log("Your score is: " + userScore); // Print userScore
+// console.log("Computer score is: " + computerScore); // Print computerScore
+
+function playGame() {
+
+    let userScore = 0;
+    let computerScore = 0;
+
+    // Draw the winner in a round 
+    function playRound(computerChoice, userChoice) {
+      if ((userChoice === "rock" && computerChoice === "scissors") ||
+        (userChoice === "scissors" && computerChoice === "paper") ||
+        (userChoice === "paper" && computerChoice === "rock")) {
+        userScore += 1;  // Increment users score
+        winner = "You win! " + userChoice + " " + "beats " + computerChoice + ".";  // Announce player as winner
+        } else if ((computerChoice === "rock" && userChoice === "scissors") ||
+        (computerChoice === "scissors" && userChoice === "paper") ||
+        (computerChoice === "paper" && userChoice === "rock")) {
+        computerScore += 1;  // Increment computers score
+        winner = "You lose! " + computerChoice + " " + "beats " + userChoice + ".";  // Announce computer as winner
+        } else {
+        winner = "It\'s a boring draw! You both selected: " + userChoice;
+        } // Announce draw
+      return userScore, computerScore, winner;
+    }
+    // Play round 1
+    getUserChoice();
+    getComputerChoice();
+    playRound(computerChoice, userChoice);
+    console.log(winner);
+    console.log("Your score: " + userScore + ". Computer score: " + computerScore + ".");
+
+    // Play round 2
+    getUserChoice();
+    getComputerChoice();
+    playRound(computerChoice, userChoice);
+    console.log(winner);
+    console.log("Your score: " + userScore + ". Computer score: " + computerScore + ".");
+
+    // Play round 3
+    getUserChoice();
+    getComputerChoice();
+    playRound(computerChoice, userChoice);
+    console.log(winner);
+    console.log("Your score: " + userScore + ". Computer score: " + computerScore + ".");
+
+    // Play round 4
+    getUserChoice();
+    getComputerChoice();
+    playRound(computerChoice, userChoice);
+    console.log(winner);
+    console.log("Your score: " + userScore + ". Computer score: " + computerScore + ".");
+
+    // Play round 5
+    getUserChoice();
+    getComputerChoice();
+    playRound(computerChoice, userChoice);
+    console.log(winner);
+    console.log("Your score: " + userScore + ". Computer score: " + computerScore + ".");
+
+    return userScore, computerScore;
+}
+playGame();
