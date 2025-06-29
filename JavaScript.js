@@ -18,24 +18,12 @@ function getComputerChoice() {
 	return computerChoice;
 } // return the string from the function.
 
-// TEST function
-// getComputerChoice();
-// console.log(computerChoice);
-
 // Get user choice and store it in userChoice.
 function getUserChoice() {
     userChoice = prompt("Please select 'rock', 'paper', or 'scissors'");  // 	Prompt user for choice. Store input in userInput.
     userChoice = userChoice.toLowerCase();  // 	Make lowercase and store in userChoice.
     return userChoice;
 }
-// getUserChoice();
-// console.log(userChoice);
-
-
-// playRound(computerChoice, userChoice);
-// console.log(winner); // Announce the winner.
-// console.log("Your score is: " + userScore); // Print userScore
-// console.log("Computer score is: " + computerScore); // Print computerScore
 
 function playGame() {
 
