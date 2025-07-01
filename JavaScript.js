@@ -1,4 +1,3 @@
-// Create variables for computerChoice, userChoice og winner.
 let computerChoice; 
 let userChoice;
 let winner;
